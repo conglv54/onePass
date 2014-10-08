@@ -11,3 +11,19 @@
 @interface ListSiteViewController : BaseViewController
 
 @end
+
+#pragma -mark Cell
+
+@interface userCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *lbl_title;
+
+@end
+
+//----------------------------------------------------------------------
+
+@interface passCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UIButton *btn;
+
+@end
