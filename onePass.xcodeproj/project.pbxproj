@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		584E944D19E6D5B800CE1430 /* Account@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 584E944C19E6D5B800CE1430 /* Account@2x.png */; };
+		584E945319E6D9C200CE1430 /* NewSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584E945219E6D9C200CE1430 /* NewSiteViewController.m */; };
+		584E945519E6DD7900CE1430 /* Generic Account@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 584E945419E6DD7900CE1430 /* Generic Account@2x.png */; };
 		58A9D18319DFFB34008FDB27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A9D18219DFFB34008FDB27 /* main.m */; };
 		58A9D18619DFFB34008FDB27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A9D18519DFFB34008FDB27 /* AppDelegate.m */; };
 		58A9D18C19DFFB34008FDB27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58A9D18A19DFFB34008FDB27 /* Main.storyboard */; };
 		58A9D18E19DFFB34008FDB27 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58A9D18D19DFFB34008FDB27 /* Images.xcassets */; };
 		58A9D19119DFFB34008FDB27 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58A9D18F19DFFB34008FDB27 /* LaunchScreen.xib */; };
 		58A9D19D19DFFB35008FDB27 /* onePassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A9D19C19DFFB35008FDB27 /* onePassTests.m */; };
+		58AD2DB819E6F1D10030FA09 /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58AD2DB719E6F1D10030FA09 /* Add@2x.png */; };
+		58AD2DBA19E6F1DB0030FA09 /* Setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58AD2DB919E6F1DB0030FA09 /* Setting@2x.png */; };
 		6E1A721319E50C68003DDF9F /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1A721219E50C68003DDF9F /* BaseViewController.m */; };
 		6E1A721719E50CAE003DDF9F /* LCTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1A721619E50CAE003DDF9F /* LCTabBarViewController.m */; };
 		6E1A721A19E50D14003DDF9F /* ListSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1A721919E50D14003DDF9F /* ListSiteViewController.m */; };
@@ -30,6 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		584E944C19E6D5B800CE1430 /* Account@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Account@2x.png"; sourceTree = "<group>"; };
+		584E945119E6D9C200CE1430 /* NewSiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewSiteViewController.h; sourceTree = "<group>"; };
+		584E945219E6D9C200CE1430 /* NewSiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewSiteViewController.m; sourceTree = "<group>"; };
+		584E945419E6DD7900CE1430 /* Generic Account@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Generic Account@2x.png"; sourceTree = "<group>"; };
 		58A9D17D19DFFB34008FDB27 /* onePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = onePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58A9D18119DFFB34008FDB27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58A9D18219DFFB34008FDB27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,6 +50,8 @@
 		58A9D19619DFFB35008FDB27 /* onePassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = onePassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58A9D19B19DFFB35008FDB27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58A9D19C19DFFB35008FDB27 /* onePassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = onePassTests.m; sourceTree = "<group>"; };
+		58AD2DB719E6F1D10030FA09 /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
+		58AD2DB919E6F1DB0030FA09 /* Setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Setting@2x.png"; sourceTree = "<group>"; };
 		6E1A721119E50C68003DDF9F /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = Base/BaseViewController.h; sourceTree = "<group>"; };
 		6E1A721219E50C68003DDF9F /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = Base/BaseViewController.m; sourceTree = "<group>"; };
 		6E1A721519E50CAE003DDF9F /* LCTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LCTabBarViewController.h; path = Base/LCTabBarViewController.h; sourceTree = "<group>"; };
@@ -105,6 +116,10 @@
 		58A9D18019DFFB34008FDB27 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				58AD2DB919E6F1DB0030FA09 /* Setting@2x.png */,
+				58AD2DB719E6F1D10030FA09 /* Add@2x.png */,
+				584E944C19E6D5B800CE1430 /* Account@2x.png */,
+				584E945419E6DD7900CE1430 /* Generic Account@2x.png */,
 				58A9D18119DFFB34008FDB27 /* Info.plist */,
 				58A9D18219DFFB34008FDB27 /* main.m */,
 			);
@@ -146,6 +161,8 @@
 				6E1A721919E50D14003DDF9F /* ListSiteViewController.m */,
 				6E1A721C19E50D2D003DDF9F /* SettingsViewController.h */,
 				6E1A721D19E50D2D003DDF9F /* SettingsViewController.m */,
+				584E945119E6D9C200CE1430 /* NewSiteViewController.h */,
+				584E945219E6D9C200CE1430 /* NewSiteViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -230,6 +247,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				584E945519E6DD7900CE1430 /* Generic Account@2x.png in Resources */,
+				58AD2DBA19E6F1DB0030FA09 /* Setting@2x.png in Resources */,
+				584E944D19E6D5B800CE1430 /* Account@2x.png in Resources */,
+				58AD2DB819E6F1D10030FA09 /* Add@2x.png in Resources */,
 				58A9D18C19DFFB34008FDB27 /* Main.storyboard in Resources */,
 				58A9D19119DFFB34008FDB27 /* LaunchScreen.xib in Resources */,
 				58A9D18E19DFFB34008FDB27 /* Images.xcassets in Resources */,
@@ -252,6 +273,7 @@
 			files = (
 				6E1A721319E50C68003DDF9F /* BaseViewController.m in Sources */,
 				6E1A721A19E50D14003DDF9F /* ListSiteViewController.m in Sources */,
+				584E945319E6D9C200CE1430 /* NewSiteViewController.m in Sources */,
 				6E1A721719E50CAE003DDF9F /* LCTabBarViewController.m in Sources */,
 				6E1A721E19E50D2D003DDF9F /* SettingsViewController.m in Sources */,
 				58A9D18619DFFB34008FDB27 /* AppDelegate.m in Sources */,

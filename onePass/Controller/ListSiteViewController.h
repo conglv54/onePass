@@ -21,9 +21,3 @@
 @end
 
 //----------------------------------------------------------------------
-
-@interface passCell : UITableViewCell
-
-@property (weak, nonatomic) IBOutlet UIButton *btn;
-
-@end

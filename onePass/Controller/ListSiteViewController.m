@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 #pragma mark - Table view datasource 
@@ -31,21 +30,16 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        userCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userCell"];
-        cell.lbl_title.text = @"Cong";
-        return cell;
-    } else if (indexPath.row == 1) {
-        passCell *cell = [tableView dequeueReusableCellWithIdentifier:@"passCell"];
-        [cell.btn setTitle:@"press" forState:UIControlStateNormal];
-        return cell;
-    }
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"addCell"];
+    cell.imageView.image = [UIImage imageNamed:@"Account"];
+    cell.textLabel.text  = @"Test";
+    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -67,9 +61,5 @@
 #pragma mark - Cell
 
 @implementation userCell
-
-@end
-
-@implementation passCell
 
 @end
