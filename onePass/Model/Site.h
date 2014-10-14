@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Site : NSObject
 
-@property (nonatomic, strong) NSString *userName;
-@property (nonatomic, strong) NSString *password;
-@property (nonatomic, strong) NSString *siteURL;
+@interface Site : NSManagedObject
 
+@property (nonatomic, retain) NSString * userName;
+@property (nonatomic, retain) NSString * passWord;
+@property (nonatomic, retain) NSString * siteURL;
 
 @end

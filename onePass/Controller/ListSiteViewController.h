@@ -10,6 +10,9 @@
 
 @interface ListSiteViewController : BaseViewController
 
+@property (nonatomic,strong)NSArray* fetchedRecordsArray;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 #pragma -mark Cell

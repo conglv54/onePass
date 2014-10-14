@@ -7,8 +7,12 @@
 //
 
 #import "NewSiteViewController.h"
+#import "Site.h"
+#import "AppDelegate.h"
 
 @interface NewSiteViewController () <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
 @end
 
@@ -29,6 +33,11 @@
     
     //-----------------------------------------------------------------------------------------------------
     
+    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    
+    self.managedObjectContext = appDelegate.managedObjectContext;
+
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -36,11 +45,26 @@
 }
 
 - (void)performRightBarbutton {
-    
+    [self saveAndBack];
+}
+
+- (void)saveAndBack {
+    [self saveSite];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)saveSite {
+    //  1
+    Site *site = [NSEntityDescription insertNewObjectForEntityForName:@"Site" inManagedObjectContext:self.managedObjectContext];
+    //  2
+    site.userName = self.emailFieldValue;
+    site.passWord = self.passwordFieldValue;
+    site.siteURL  = self.siteFieldValue;
+    //  3
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+    }
 }
 
 #pragma mark - Tableview Datasource 
@@ -79,14 +103,17 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark - Text field delegate 
+#pragma mark - Text field delegate
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
     NSIndexPath *indexPath = [self.tbl indexPathForCell:(UITableViewCell*)[[textField superview] superview]];
     
-    if (indexPath.row == kUserCell) self.emailFieldValue = textField.text;
-    if (indexPath.row == kPasswordCell) self.passwordFieldValue = textField.text;
-    if (indexPath.row == kSiteCell) self.siteFieldValue = textField.text;
+    if (indexPath.row == kUserCell)
+        self.emailFieldValue = textField.text;
+    if (indexPath.row == kPasswordCell)
+        self.passwordFieldValue = textField.text;
+    if (indexPath.row == kSiteCell)
+        self.siteFieldValue = textField.text;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -100,7 +127,7 @@
         SiteViewCell *cell = (SiteViewCell*)[self.tbl cellForRowAtIndexPath:sibling];
         [cell.txtSite becomeFirstResponder];
     } else if (indexPath.row == kSiteCell) {
-    
+        [self saveAndBack];
     }
     
     return YES;

@@ -7,6 +7,8 @@
 //
 
 #import "ListSiteViewController.h"
+#import "AppDelegate.h"
+#import "Site.h"
 
 @interface ListSiteViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -18,10 +20,21 @@
     [super viewDidLoad];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [super viewDidLoad];
+    AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+    
+    // Fetching Records and saving it in "fetchedRecordsArray" object
+    self.fetchedRecordsArray = [appDelegate getAllSites];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table view datasource 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return self.fetchedRecordsArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -31,8 +44,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"addCell"];
+    
+    Site *site = self.fetchedRecordsArray[indexPath.row];
+    
     cell.imageView.image = [UIImage imageNamed:@"Account"];
-    cell.textLabel.text  = @"Test";
+    cell.textLabel.text  = site.siteURL;
+    
     return cell;
 }
 

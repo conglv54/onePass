@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		580004E219ED7C03001AACAA /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 580004E119ED7C03001AACAA /* Utils.m */; };
-		580004E619ED80A1001AACAA /* Site.m in Sources */ = {isa = PBXBuildFile; fileRef = 580004E519ED80A1001AACAA /* Site.m */; };
+		580004EA19ED8428001AACAA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580004E919ED8428001AACAA /* CoreData.framework */; };
+		580004EE19ED8475001AACAA /* Site.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 580004EC19ED8475001AACAA /* Site.xcdatamodeld */; };
+		580004F119ED8635001AACAA /* Site.m in Sources */ = {isa = PBXBuildFile; fileRef = 580004F019ED8635001AACAA /* Site.m */; };
 		584E944D19E6D5B800CE1430 /* Account@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 584E944C19E6D5B800CE1430 /* Account@2x.png */; };
 		584E945319E6D9C200CE1430 /* NewSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584E945219E6D9C200CE1430 /* NewSiteViewController.m */; };
 		584E945519E6DD7900CE1430 /* Generic Account@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 584E945419E6DD7900CE1430 /* Generic Account@2x.png */; };
@@ -39,8 +41,10 @@
 /* Begin PBXFileReference section */
 		580004E019ED7C03001AACAA /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Utils/Utils.h; sourceTree = "<group>"; };
 		580004E119ED7C03001AACAA /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Utils/Utils.m; sourceTree = "<group>"; };
-		580004E419ED80A1001AACAA /* Site.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Site.h; path = Model/Site.h; sourceTree = "<group>"; };
-		580004E519ED80A1001AACAA /* Site.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Site.m; path = Model/Site.m; sourceTree = "<group>"; };
+		580004E919ED8428001AACAA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		580004ED19ED8475001AACAA /* Site.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Site.xcdatamodel; sourceTree = "<group>"; };
+		580004EF19ED8635001AACAA /* Site.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Site.h; path = Model/Site.h; sourceTree = "<group>"; };
+		580004F019ED8635001AACAA /* Site.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Site.m; path = Model/Site.m; sourceTree = "<group>"; };
 		584E944C19E6D5B800CE1430 /* Account@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Account@2x.png"; sourceTree = "<group>"; };
 		584E945119E6D9C200CE1430 /* NewSiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewSiteViewController.h; sourceTree = "<group>"; };
 		584E945219E6D9C200CE1430 /* NewSiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewSiteViewController.m; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				580004EA19ED8428001AACAA /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,10 +103,18 @@
 		580004E819ED80B0001AACAA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				580004E419ED80A1001AACAA /* Site.h */,
-				580004E519ED80A1001AACAA /* Site.m */,
+				580004EF19ED8635001AACAA /* Site.h */,
+				580004F019ED8635001AACAA /* Site.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		580004EB19ED8437001AACAA /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				580004E919ED8428001AACAA /* CoreData.framework */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 		58A9D17419DFFB34008FDB27 = {
@@ -142,12 +155,14 @@
 		58A9D18019DFFB34008FDB27 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				580004EC19ED8475001AACAA /* Site.xcdatamodeld */,
 				58AD2DB919E6F1DB0030FA09 /* Setting@2x.png */,
 				58AD2DB719E6F1D10030FA09 /* Add@2x.png */,
 				584E944C19E6D5B800CE1430 /* Account@2x.png */,
 				584E945419E6DD7900CE1430 /* Generic Account@2x.png */,
 				58A9D18119DFFB34008FDB27 /* Info.plist */,
 				58A9D18219DFFB34008FDB27 /* main.m */,
+				580004EB19ED8437001AACAA /* Framework */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -297,6 +312,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				580004F119ED8635001AACAA /* Site.m in Sources */,
+				580004EE19ED8475001AACAA /* Site.xcdatamodeld in Sources */,
 				6E1A721319E50C68003DDF9F /* BaseViewController.m in Sources */,
 				6E1A721A19E50D14003DDF9F /* ListSiteViewController.m in Sources */,
 				584E945319E6D9C200CE1430 /* NewSiteViewController.m in Sources */,
@@ -305,7 +322,6 @@
 				6E1A721E19E50D2D003DDF9F /* SettingsViewController.m in Sources */,
 				58A9D18619DFFB34008FDB27 /* AppDelegate.m in Sources */,
 				58A9D18319DFFB34008FDB27 /* main.m in Sources */,
-				580004E619ED80A1001AACAA /* Site.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +528,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		580004EC19ED8475001AACAA /* Site.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				580004ED19ED8475001AACAA /* Site.xcdatamodel */,
+			);
+			currentVersion = 580004ED19ED8475001AACAA /* Site.xcdatamodel */;
+			path = Site.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 58A9D17519DFFB34008FDB27 /* Project object */;
 }

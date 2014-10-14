@@ -8,6 +8,11 @@
 
 #import "Site.h"
 
+
 @implementation Site
+
+@dynamic userName;
+@dynamic passWord;
+@dynamic siteURL;
 
 @end
