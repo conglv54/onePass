@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		580004E219ED7C03001AACAA /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 580004E119ED7C03001AACAA /* Utils.m */; };
+		580004E619ED80A1001AACAA /* Site.m in Sources */ = {isa = PBXBuildFile; fileRef = 580004E519ED80A1001AACAA /* Site.m */; };
 		584E944D19E6D5B800CE1430 /* Account@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 584E944C19E6D5B800CE1430 /* Account@2x.png */; };
 		584E945319E6D9C200CE1430 /* NewSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 584E945219E6D9C200CE1430 /* NewSiteViewController.m */; };
 		584E945519E6DD7900CE1430 /* Generic Account@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 584E945419E6DD7900CE1430 /* Generic Account@2x.png */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		580004E019ED7C03001AACAA /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Utils/Utils.h; sourceTree = "<group>"; };
+		580004E119ED7C03001AACAA /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Utils.m; path = Utils/Utils.m; sourceTree = "<group>"; };
+		580004E419ED80A1001AACAA /* Site.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Site.h; path = Model/Site.h; sourceTree = "<group>"; };
+		580004E519ED80A1001AACAA /* Site.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Site.m; path = Model/Site.m; sourceTree = "<group>"; };
 		584E944C19E6D5B800CE1430 /* Account@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Account@2x.png"; sourceTree = "<group>"; };
 		584E945119E6D9C200CE1430 /* NewSiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewSiteViewController.h; sourceTree = "<group>"; };
 		584E945219E6D9C200CE1430 /* NewSiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewSiteViewController.m; sourceTree = "<group>"; };
@@ -80,6 +86,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		580004E319ED7C0B001AACAA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				580004E019ED7C03001AACAA /* Utils.h */,
+				580004E119ED7C03001AACAA /* Utils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		580004E819ED80B0001AACAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				580004E419ED80A1001AACAA /* Site.h */,
+				580004E519ED80A1001AACAA /* Site.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		58A9D17419DFFB34008FDB27 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +127,8 @@
 			children = (
 				58A9D18419DFFB34008FDB27 /* AppDelegate.h */,
 				58A9D18519DFFB34008FDB27 /* AppDelegate.m */,
+				580004E819ED80B0001AACAA /* Model */,
+				580004E319ED7C0B001AACAA /* Utils */,
 				6E1A721B19E50D1A003DDF9F /* Controller */,
 				6E1A721419E50C75003DDF9F /* Base */,
 				58A9D18A19DFFB34008FDB27 /* Main.storyboard */,
@@ -274,10 +300,12 @@
 				6E1A721319E50C68003DDF9F /* BaseViewController.m in Sources */,
 				6E1A721A19E50D14003DDF9F /* ListSiteViewController.m in Sources */,
 				584E945319E6D9C200CE1430 /* NewSiteViewController.m in Sources */,
+				580004E219ED7C03001AACAA /* Utils.m in Sources */,
 				6E1A721719E50CAE003DDF9F /* LCTabBarViewController.m in Sources */,
 				6E1A721E19E50D2D003DDF9F /* SettingsViewController.m in Sources */,
 				58A9D18619DFFB34008FDB27 /* AppDelegate.m in Sources */,
 				58A9D18319DFFB34008FDB27 /* main.m in Sources */,
+				580004E619ED80A1001AACAA /* Site.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

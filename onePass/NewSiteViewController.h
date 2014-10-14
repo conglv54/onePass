@@ -8,9 +8,11 @@
 
 #import "BaseViewController.h"
 
-#define kUserField 0
-#define kPasswordField 1
-#define kSiteField 3
+#define kUserCell 0
+#define kPasswordCell 1
+#define kSiteCell 2
+
+#define kPassworkLength 20
 
 @interface NewSiteViewController : BaseViewController
 
@@ -20,6 +22,8 @@
 @property (strong, nonatomic) NSString *siteFieldValue;
 
 @end
+
+#pragma mark - Cell
 
 @interface UserViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UITextField *txtUserName;

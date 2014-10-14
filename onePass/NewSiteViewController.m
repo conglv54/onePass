@@ -16,18 +16,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+ 
+    
+    //-----------------------------------------------------------------------------------------------------
+    
+    self.title = @"NewSite";
     
     //-----------------------------------------------------------------------------------------------------
     
     UIBarButtonItem *rigntBarbtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(performRightBarbutton)];
     self.navigationItem.rightBarButtonItem = rigntBarbtn;
     
-    //-----------------------------------------------------------------------------------------------------    
+    //-----------------------------------------------------------------------------------------------------
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
 
 - (void)performRightBarbutton {
     
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)saveSite {
 }
 
 #pragma mark - Tableview Datasource 
@@ -45,15 +58,15 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
+    if (indexPath.row == kUserCell) {
         UserViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userCell" forIndexPath:indexPath];
         cell.txtUserName.delegate = self;
         return cell;
-    } else if (indexPath.row == 1) {
+    } else if (indexPath.row == kPasswordCell) {
         PassWordViewCell *passCell = [tableView dequeueReusableCellWithIdentifier:@"passwordCell" forIndexPath:indexPath];
         passCell.txtPassword.delegate = self;
         return passCell;
-    } else if (indexPath.row == 2) {
+    } else if (indexPath.row == kSiteCell) {
         SiteViewCell *siteCell = [tableView dequeueReusableCellWithIdentifier:@"siteCell" forIndexPath:indexPath];
         siteCell.txtSite.delegate = self;
         return siteCell;
@@ -71,29 +84,25 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     NSIndexPath *indexPath = [self.tbl indexPathForCell:(UITableViewCell*)[[textField superview] superview]];
     
-    if (indexPath.row == kUserField) self.emailFieldValue = textField.text;
-    if (indexPath.row == kPasswordField) self.passwordFieldValue = textField.text;
-    if (indexPath.row == kSiteField) self.siteFieldValue = textField.text;
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    NSIndexPath *indexPath = [self.tbl indexPathForCell:(UITableViewCell*)[[textField superview] superview]];
-    
-    if (indexPath.row == kUserField) self.emailFieldValue = textField.text;
-    if (indexPath.row == kPasswordField) self.passwordFieldValue = textField.text;
-    if (indexPath.row == kSiteField) self.siteFieldValue = textField.text;
-    
+    if (indexPath.row == kUserCell) self.emailFieldValue = textField.text;
+    if (indexPath.row == kPasswordCell) self.passwordFieldValue = textField.text;
+    if (indexPath.row == kSiteCell) self.siteFieldValue = textField.text;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-//    NSIndexPath *indexPath = [self.tbl indexPathForCell:(UserViewCell*)[[textField superview] superview]];
-//    if (indexPath.row == kUserField) {
-//        NSIndexPath *sibling = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
-//        UserViewCell *cell = (UserViewCell*)[self.tbl cellForRowAtIndexPath:sibling];
-//        [cell.txtUserName becomeFirstResponder];
-//    } else {
-//       
-//    }
+    NSIndexPath *indexPath = [self.tbl indexPathForCell:(UserViewCell*)[[textField superview] superview]];
+    if (indexPath.row == kUserCell) {
+        NSIndexPath *sibling = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+        PassWordViewCell *cell = (PassWordViewCell*)[self.tbl cellForRowAtIndexPath:sibling];
+        [cell.txtPassword becomeFirstResponder];
+    } else if (indexPath.row == kPasswordCell) {
+        NSIndexPath *sibling = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+        SiteViewCell *cell = (SiteViewCell*)[self.tbl cellForRowAtIndexPath:sibling];
+        [cell.txtSite becomeFirstResponder];
+    } else if (indexPath.row == kSiteCell) {
+    
+    }
+    
     return YES;
 }
 
@@ -123,21 +132,11 @@
 @implementation PassWordViewCell
 
 - (IBAction)genrePassword:(id)sender {
-    int lengt = 20;
-    NSString *pass = [self randomStringWithLength:lengt];
+    int lengt = kPassworkLength;
+    NSString *pass = [Utils randomStringWithLength:lengt];
     self.txtPassword.text = pass;
 }
 
-- (NSString *)randomStringWithLength: (int) len {
-    NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
-    
-    for (int i=0; i<len; i++) {
-        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform((int)[letters length]) % [letters length]]];
-    }
-    
-    return randomString;
-}
 
 @end
 
